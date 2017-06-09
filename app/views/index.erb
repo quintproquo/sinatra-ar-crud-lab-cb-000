@@ -1,0 +1,15 @@
+<html>
+  <head></head>
+  <body>
+    <center>
+      <% @posts.each do |p| %>
+        <br><h1><%= p.name %></h1><br>
+        <p><%= p.content %></p><br>
+        <form method="post" action="/posts/<%= p.id %>/delete">
+          <input id="hidden" type="hidden" name="_method" value="delete">
+          <input type="submit" value="delete">
+        </form><br>
+      <% end %>
+    </center>
+  </body>
+</html>
